@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strings"
 )
 
 type UserService interface {
@@ -43,9 +44,16 @@ func (s *Service) GetUsersListByParams(user *models.People, pagination models.Pa
 	return users, nil
 }
 
-// отправляет запрос на установленный в конфигах адрес и достает оттуда недостающую информацию о пользователе
-func (s *Service) getPersonInfo(passportNumber string) (*models.People, error) {
-	url := fmt.Sprintf("%s/info?passportNumber=%s", s.config.Server.PeopleInfo, passportNumber)
+func (s *Service) getPersonInfo(passport string) (*models.People, error) {
+	parts := strings.Split(passport, " ")
+	if len(parts) != 2 {
+		return nil, fmt.Errorf("invalid passport format")
+	}
+
+	passportSerie := parts[0]
+	passportNumber := parts[1]
+
+	url := fmt.Sprintf("%s/info?passportSerie=%s&passportNumber=%s", s.config.Server.PeopleInfo, passportSerie, passportNumber)
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, fmt.Errorf("request failed: %v", err)

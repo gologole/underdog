@@ -1,1 +1,18 @@
 INFO: 2024/07/09 14:25:31 main.go:84: Миграции успешно применены!
+INFO: 2024/07/10 13:01:04 main.go:84: Миграции успешно применены!
+INFO: 2024/07/10 13:15:38 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND passport_number = '1234 567890' OFFSET 0 LIMIT 0
+INFO: 2024/07/10 13:15:38 userRepository.go:90: Failed to execute query: pq: column "passport_number" does not exist
+INFO: 2024/07/10 13:15:38 userservice.go:40: Failed to filter people: pq: column "passport_number" does not exist
+INFO: 2024/07/11 12:06:31 main.go:84: Миграции успешно применены!
+INFO: 2024/07/11 12:23:11 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND surname = 'Иванов' AND name = 'Иван' AND patronymic = 'Иванович' AND address = 'г. Москва, ул. Ленина, д. 5, кв. 1' OFFSET 0 LIMIT 10
+INFO: 2024/07/11 12:23:11 userRepository.go:90: Failed to execute query: pq: column "surname" does not exist
+INFO: 2024/07/11 12:23:11 userservice.go:40: Failed to filter people: pq: column "surname" does not exist
+INFO: 2024/07/11 12:29:39 main.go:84: Миграции успешно применены!
+INFO: 2024/07/11 12:29:45 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND surname = 'Иванов' AND name = 'Иван' AND patronymic = 'Иванович' AND address = 'г. Москва, ул. Ленина, д. 5, кв. 1' OFFSET 0 LIMIT 10
+INFO: 2024/07/11 12:32:43 main.go:84: Миграции успешно применены!
+INFO: 2024/07/11 12:32:47 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND surname = 'Иванов' AND name = 'Иван' AND patronymic = 'Иванович' AND address = 'г. Москва, ул. Ленина, д. 5, кв. 1' OFFSET 0 LIMIT 10
+INFO: 2024/07/11 12:32:55 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND surname = 'Иванов' AND name = 'Иван' AND patronymic = 'Иванович' AND address = 'г. Москва, ул. Ленина, д. 5, кв. 1' OFFSET 0 LIMIT 10
+INFO: 2024/07/11 12:44:05 main.go:84: Миграции успешно применены!
+INFO: 2024/07/11 12:44:11 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND surname = 'Иванов' AND name = 'Иван' AND patronymic = 'Иванович' AND address = 'г. Москва, ул. Ленина, д. 5, кв. 1' OFFSET 0 LIMIT 10
+INFO: 2024/07/11 12:45:09 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 AND surname = 'Иванов' AND name = 'Иван' OFFSET 0 LIMIT 10
+INFO: 2024/07/11 12:48:12 userRepository.go:86: Executing query: SELECT * FROM people WHERE 1=1 OFFSET 0 LIMIT 10

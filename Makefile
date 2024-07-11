@@ -1,8 +1,11 @@
-all:
+all: postgresrun run
+
+build_containers:
 	docker-compose up --build
-build:
+run:
 	go mod tidy
 	go run cmd/main.go
+
 postgresrun:
 	docker run -d \
     --name my-postgres \
